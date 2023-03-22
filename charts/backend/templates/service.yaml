@@ -5,9 +5,9 @@ metadata:
   labels:
     {{- include "backend.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.global.backend.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.global.backend.service.port }}
       targetPort: http
       protocol: TCP
       name: http
